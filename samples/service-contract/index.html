@@ -56,7 +56,7 @@
 
             let serviceContract = await getServiceContract(cloudHost, account, company, activityID);
 
-            updateUI(serviceContract ? `${serviceContract.contractType}` : `Kein Vetrag ermittelbar`);
+            updateUI(serviceContract ? `${serviceContract.contractType}` : `AXIANS konnte keinen Vertrag ermitteln`);
           });
         });
       }
