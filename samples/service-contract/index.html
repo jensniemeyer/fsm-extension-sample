@@ -82,7 +82,8 @@
             updateUI(activityDetails ? `${activityDetails}` : `AXIANS: Kein Details gefunden!`);
             
             let equipmentDetails = await getEquipmentDetails(cloudHost, account, company, activityID);
-             updateUI_Equipment(equipmentDetails);
+             updateUI_Equipment(equipmentDetails[0]);
+            updateUI_Seriennummer(equipmentDetails[1])
           });
         });
       }
