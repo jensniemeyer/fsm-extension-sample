@@ -151,7 +151,7 @@ function getEquipmentDetails(cloudHost, account, company, activity_id) {
 						var equipment_name = json.data[0].equipment.name;
 						var seriennummer   = json.data[0].equipment.serialNumber;
 						
-	    					resolve(equipment_name, seriennummer);
+	    					resolve([equipment_name, seriennummer]);
 
 				});	
 	    
