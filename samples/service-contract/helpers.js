@@ -4,6 +4,11 @@
 const updateUI = (text) =>
   (document.querySelectorAll('#info')[0].innerText = text);
 
+
+const  updateUI_Equipment= (text) =>
+  (document.querySelectorAll('#equipment')[0].innerText = text);
+
+
 //
 // Loop before a token expire to fetch a new one
 //
