@@ -142,7 +142,7 @@ function getEquipmentDetails(cloudHost, account, company, activity_id) {
 				.then(response => response.json())
 				.then(function(json) {
 
-						const equi = JSON.stringify(json));
+						const equi = JSON.stringify(json);
 						resolve (equi);						
 
 				});	
