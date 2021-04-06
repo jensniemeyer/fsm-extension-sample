@@ -8,6 +8,9 @@ const updateUI = (text) =>
 const  updateUI_Equipment= (text) =>
   (document.querySelectorAll('#equipment')[0].innerText = text);
 
+const  updateUI_Seriennummer= (text) =>
+  (document.querySelectorAll('#seriennummer')[0].innerText = text);
+
 
 //
 // Loop before a token expire to fetch a new one
@@ -145,9 +148,10 @@ function getEquipmentDetails(cloudHost, account, company, activity_id) {
 						//const equi = JSON.stringify(json);
 						//resolve (equi);		
 				
-						var equipment_name = json.data[0].equipment.name + "("+json.data[0].equipment.serialNumber+")";
+						var equipment_name = json.data[0].equipment.name;
+						var seriennummer   = json.data[0].equipment.serialNumber;
 						
-	    					resolve(equipment_name);
+	    					resolve(equipment_name, seriennummer);
 
 				});	
 	    
