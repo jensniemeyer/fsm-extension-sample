@@ -22,6 +22,10 @@
       <font class="myLabel">Installationspreis</font>
       <p class="myValue" id="info">...</p>
     </div>
+    <div>
+      <font class="myLabel">Equipment</font>
+      <p class="myValue" id="equipment">...</p>
+    </div>
     <script src="https://unpkg.com/fsm-shell"></script>
     <script src="helpers.js"></script>
     <script>
@@ -72,6 +76,9 @@
             
             let activityDetails = await getActivityDetails(cloudHost, account, company, activityID);
             updateUI(activityDetails ? `${activityDetails}` : `AXIANS: Kein Details gefunden!`);
+            
+            let equipmentDetails = await getEquipmentDetails(cloudHost, account, company, activityID);
+             updateUI_Equipment(equipmentDetails);
           });
         });
       }
