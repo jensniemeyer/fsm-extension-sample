@@ -97,7 +97,9 @@ function getActivityDetails(cloudHost, account, company, activity_id) {
 
 			const activity = json.data[0].activity;
           
-			resolve(cloudHost+":"+JSON.stringify(json));
+	    		var installationPrice = json.data[0].activity.udfValues[0].value+ " "+ 	json.data[0].activity.udfValues[1].value;
+			//resolve(cloudHost+":"+JSON.stringify(json));
+	    		resolve(installationPrice);
 
         });
 
