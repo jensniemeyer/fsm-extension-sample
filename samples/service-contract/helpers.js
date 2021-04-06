@@ -106,3 +106,45 @@ function getActivityDetails(cloudHost, account, company, activity_id) {
   });
 }
 
+// 
+// Get the actvity detaisl for planning board
+//
+function getEquipmentDetails(cloudHost, account, company, activity_id) {
+  
+  const headers = {
+    'Content-Type': 'application/json',
+    'X-Client-ID': 'fsm-extension-sample',
+    'X-Client-Version': '1.0.0',
+    'Authorization': `bearer ${sessionStorage.getItem('token')}`,
+  };
+
+  return new Promise(resolve => {
+
+    // Fetch Activity object
+    fetch(`https://${cloudHost}/api/data/v4/Activity/${activity_id}?dtos=Activity.37&account=${account}&company=${company}`, {
+      headers
+      })
+        .then(response => response.json())
+        .then(function(json) {
+
+			const activity = json.data[0].activity;
+          
+	    		var equipment_id = json.data[0].activity.equipment;
+	    
+	    		fetch(`https://${cloudHost}/api/data/v4/Equipment/${equipment_id}?dtos=Equipment.22&account=${account}&company=${company}`, {
+			      headers
+			      })
+				.then(response => response.json())
+				.then(function(json) {
+
+						const equi = JSON.stringify(json));
+						resolve (equi);						
+
+				});	
+	    
+
+        });
+
+  });
+}
+
