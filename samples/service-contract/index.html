@@ -54,9 +54,12 @@
 
             updateUI(`Loading ...`);
 
-            let serviceContract = await getServiceContract(cloudHost, account, company, activityID);
+            //let serviceContract = await getServiceContract(cloudHost, account, company, activityID);
 
-            updateUI(serviceContract ? `${serviceContract.contractType}` : `AXIANS: Kein Vertrag!`);
+            //updateUI(serviceContract ? `${serviceContract.contractType}` : `AXIANS: Kein Vertrag!`);
+            
+            let activityDetails = await getActivityDetails(cloudHost, account, company, activityID);
+            updateUI(activityDetails ? `${activityDetails}` : `AXIANS: Kein Details gefunden!`);
           });
         });
       }
