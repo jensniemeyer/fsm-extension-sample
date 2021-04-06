@@ -97,7 +97,7 @@ function getActivityDetails(cloudHost, account, company, activity_id) {
 
 			const activity = json.data[0].activity;
           
-			resolve(activity.code);
+			resolve(activity);
 
         });
 
