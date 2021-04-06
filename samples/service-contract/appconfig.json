@@ -1,7 +1,7 @@
 {
-  "name": "Service Contract",
-  "provider": "SAP FSM",
-  "description": "Sample extension to demo data fetch using a frontend only architecture",   
+  "name": "Activity Details",
+  "provider": "AXIANS",
+  "description": "Anzeige der Aktivity Details",   
   "version": "1.0.0", 
   "icon": "https://raw.githubusercontent.com/SAP-samples/fsm-extension-sample/refactor/samples/service-contract/icon.png"
 }
