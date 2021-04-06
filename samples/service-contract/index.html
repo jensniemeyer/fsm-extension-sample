@@ -6,11 +6,21 @@
     <link href="https://unpkg.com/fundamental-styles" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
   </head>
+  <style>
+    .myLabel {
+      font-size:12pt;
+      font-face:Arial;
+    }
+    .myValue {
+      font-size:12pt;
+      font-face:Arial;
+      font-weight:bold;
+    }
+    </style>
   <body>
     <div>
-      <font size="12px" face="SapTextFont">Installationspreis
-      <p class="fd-title fd-title--h2" id="info">...</p>
-      </font>
+      <font class="myLabel">Installationspreis</font>
+      <p class="myValue" id="info">...</p>
     </div>
     <script src="https://unpkg.com/fsm-shell"></script>
     <script src="helpers.js"></script>
