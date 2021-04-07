@@ -169,7 +169,7 @@ function getEquipmentDetails(cloudHost, account, company, activity_id) {
 // 
 // A T T A C H M E N T S
 //
-function getAttachments(cloudHost, account, company, activity_id) {
+function getServiceCallId(cloudHost, account, company, activity_id) {
   
   const headers = {
     'Content-Type': 'application/json',
