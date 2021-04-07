@@ -188,9 +188,19 @@ function getServiceCallId(cloudHost, account, company, activity_id) {
         .then(function(json) {
 
 			const activity 		= json.data[0].activity;
-	    		//var serviceCallId	= JSON.stringify(activity); // activity.object.objectId
+	    		var serviceCallId	= activity.object.objectId;
          
-			resolve (">"+activity.object.objectId+"<");	
+	    		const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
+	    
+			fetch(`https://${cloudHost}/api/data/v4/Attachment/?dtos=Attachment.37&account=${account}&company=${company}`, {
+			      headers,
+				body: toUrlEncoded({ query: `select att.filename from Attachment att where att.object.objectId ='`+serviceCallId+`'` })
+			      })
+				.then(response => response.json())
+				.then(function(json) {
+					resolve(JSON.stringify(json))
+			})
+	    
 	    
 
         });
