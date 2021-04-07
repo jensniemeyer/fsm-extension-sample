@@ -161,3 +161,39 @@ function getEquipmentDetails(cloudHost, account, company, activity_id) {
   });
 }
 
+
+
+
+// 
+// A T T A C H M E N T S
+//
+function getAttachments(cloudHost, account, company, activity_id) {
+  
+  const headers = {
+    'Content-Type': 'application/json',
+    'X-Client-ID': 'fsm-extension-sample',
+    'X-Client-Version': '1.0.0',
+    'Authorization': `bearer ${sessionStorage.getItem('token')}`,
+  };
+
+  return new Promise(resolve => {
+
+    // Fetch Activity object
+    fetch(`https://${cloudHost}/api/data/v4/Activity/${activity_id}?dtos=Activity.37&account=${account}&company=${company}`, {
+      headers
+      })
+        .then(response => response.json())
+        .then(function(json) {
+
+			const activity 		= json.data[0].activity;
+	    		var serviceCallId	= activity.object.objectId
+          
+			resolve (serviceCallId);	
+	    
+
+        });
+
+  });
+}
+
+
