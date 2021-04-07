@@ -91,7 +91,14 @@
             
             let equipmentDetails = await getEquipmentDetails(cloudHost, account, company, activityID);
              updateUI_Equipment(equipmentDetails[0]);
-            updateUI_Seriennummer(equipmentDetails[1])
+            updateUI_Seriennummer(equipmentDetails[1]);
+            
+             let serviceCallId = await getServicecallId(cloudHost, account, company, activityID);
+             updateUI_ServiceCallId(serviceCallId);
+           
+            
+            
+            
           });
         });
       }
