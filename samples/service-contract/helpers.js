@@ -11,6 +11,8 @@ const  updateUI_Equipment= (text) =>
 const  updateUI_Seriennummer= (text) =>
   (document.querySelectorAll('#seriennummer')[0].innerText = text);
 
+const  updateUI_ServiceCallId= (text) =>
+  (document.querySelectorAll('#serviceCallId')[0].innerText = text);
 
 //
 // Loop before a token expire to fetch a new one
