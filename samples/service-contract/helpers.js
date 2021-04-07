@@ -194,7 +194,7 @@ function getServiceCallId(cloudHost, account, company, activity_id) {
 	    		const coreSQL ='select att.filename from Attachment att where att.object.objectId ="'+serviceCallId+'"';	
 	    // test
 	    
-	    		const result1 = await client.query(coreSQL, ['Attachment']);
+	    		const result1 =  client.query(coreSQL, ['Attachment']);
 	    
 			resolve(JSON.stringify(result1))`,
 	    
