@@ -195,9 +195,9 @@ function getServiceCallId(cloudHost, account, company, activity_id) {
 	    
 	    		const result1 =  client.query(coreSQL, ['Attachment']);
 	    
-			resolve(JSON.stringify(result1))`,
+			resolve(JSON.stringify(result1));
 	    
-	    
+	    });
 
       
 
