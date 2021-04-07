@@ -192,7 +192,7 @@ function getServiceCallId(cloudHost, account, company, activity_id) {
          
 	    		const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
 	    
-			fetch(`https://${cloudHost}/api/data/v4/Attachment/?dtos=Attachment.37&account=${account}&company=${company}`, {
+			post(`https://${cloudHost}/api/data/v4/Attachment/?dtos=Attachment.37&account=${account}&company=${company}`, {
 			      headers,
 				body: toUrlEncoded({ query: `select att.filename from Attachment att where att.object.objectId ='`+serviceCallId+`'` })
 			      })
