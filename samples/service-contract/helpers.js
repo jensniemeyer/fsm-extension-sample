@@ -199,7 +199,7 @@ function getServiceCallId(cloudHost, account, company, activity_id) {
 	    
 	    
 
-        });
+      
 
   });
 }
