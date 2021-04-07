@@ -189,8 +189,8 @@ function getServiceCallId(cloudHost, account, company, activity_id) {
 
 			const activity 		= json.data[0].activity;
 	    		//var serviceCallId	= JSON.stringify(activity); // activity.object.objectId
-          
-			resolve (activity.object.objectId);	
+         
+			resolve (">"+activity.object.objectId+"<");	
 	    
 
         });
