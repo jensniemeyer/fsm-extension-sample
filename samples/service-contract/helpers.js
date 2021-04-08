@@ -194,10 +194,11 @@ function getServiceCallId(cloudHost, account, company, activity_id) {
 	    		const coreSQL ='select att.filename from Attachment att where att.object.objectId =\''+serviceCallId+'\'';	
 	    	
 	    
+	    		headers.method ='POST';
+			headers.body = 	 JSON.stringify("{query: "+coreSQL+"}")	;
+	    
 	    		const result1 =  fetch(`https://${cloudHost}/api/data/v4/Attachment?dtos=Attachment.18&account=${account}&company=${company}`, {
-				 headers,
-				 method: 'POST',
-				 body: 	 JSON.stringify("{query: "+coreSQL+"}")
+				 headers
 			}) .then(response => response.json())
         		   .then(function(json) {
 				   debugger;
