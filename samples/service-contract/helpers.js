@@ -196,7 +196,8 @@ function getServiceCallId(cloudHost, account, company, activity_id) {
 	    
 	    		const result1 =  fetch(`https://${cloudHost}/api/data/v4/Attachment?dtos=Attachment.18&account=${account}&company=${company}`, {
 				 headers,
-				 query: coreSQL
+				 method: 'POST',
+				 body: 	 JSON.stringify("{data: "+coreSQL+"}")
 			}) .then(response => response.json())
         		   .then(function(json) {
 				   debugger;
